@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/backgroundColor"
+    tools:context="graciasalle.myappapplication.DataExchange">
+
+    <TextView android:text="@string/textExchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/titlePrincipal"
+        android:id="@+id/textViewOrigin"
+    />
+    <TextView android:text="@string/moneyOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/title"
+        android:id="@+id/moneyOrigin"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:layout_below="@+id/textViewOrigin"
+        />
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/textDestination"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:layout_below="@+id/moneyOrigin"
+        android:textSize="@dimen/title"
+        android:id="@+id/detailDestination"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailDestination"
+        android:text="@string/moneyDestination"
+        android:id="@+id/detailMoneyDestination"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:textSize="@dimen/title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:textSize="@dimen/title"
+        android:id="@+id/exchangeRateMoney"
+        android:text="@string/rateExchange"
+        android:layout_below="@+id/detailMoneyDestination"/>
+
+
+    <TextView
+        android:id="@+id/originRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:textSize="@dimen/title"
+        android:text="@string/rateExchangeOrigin"
+        android:layout_below="@+id/exchangeRateMoney"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:textSize="@dimen/title"
+        android:id="@+id/exchangeRateMoney1"
+        android:text="@string/rateExchange1"
+        android:layout_below="@+id/originRate"/>
+   <TextView
+    android:id="@+id/originDestination"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_elements"
+    android:textSize="@dimen/title"
+    android:text="@string/rateExchangeDestination"
+    android:layout_below="@+id/exchangeRateMoney1"/>
+
+ <View
+    android:background="@color/colorPrimaryDark"
+    android:layout_width="wrap_content"
+    android:layout_height="2dp"
+    android:layout_below="@+id/originDestination"
+    android:layout_marginTop="@dimen/margin_elements"
+    />
+<TextView
+    android:id="@+id/exchange"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_elements"
+    android:textSize="@dimen/titlePrincipal"
+    android:text="@string/exchange"
+    android:layout_below="@+id/originDestination"
+    android:textColor="@color/colorAccent"
+    android:layout_centerHorizontal="true"
+    />
+
+</RelativeLayout>
