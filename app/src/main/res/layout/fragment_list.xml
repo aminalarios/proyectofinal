@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/margin_elements">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textOrigin"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:gravity="center"/>
+            <View
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_elements"
+                />
+            <Spinner android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:id="@+id/spinners"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:textSize="@dimen/subtitle"/>
+
+            <ImageView
+                android:layout_marginTop="@dimen/margin_elements"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/banderaOrigen"
+                android:src="@drawable/ic_usa"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/moneyOrigin"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:gravity="center"/>
+
+            <View
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_elements"
+                />
+
+            <Spinner android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:entries="@array/origin_array"
+                android:id="@+id/spinnerMoney"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:textSize="@dimen/subtitle"
+                />
+
+
+            <TextView
+                android:layout_marginTop="@dimen/margin_elements"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textDestination"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <View
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_elements"
+                />
+            <Spinner android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:id="@+id/spinnersDestination"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:textSize="@dimen/title"/>
+            <ImageView
+                android:layout_marginTop="@dimen/margin_elements"
+                android:id="@+id/flag"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:src="@drawable/ic_launcher"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/moneyDestination"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:gravity="center"/>
+            <View
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_elements"
+                />
+
+            <Spinner android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:entries="@array/origin_array"
+                android:id="@+id/spinnerMoney_2"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:textSize="@dimen/title"/>
+        </LinearLayout>
+
+    <View
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/margin_elements"
+        />
+     <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_elements"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textStyle="bold"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/textColor"
+                android:layout_marginTop="@dimen/margin_elements"
+                />
+            <EditText
+                android:inputType="number"
+                android:id="@+id/quantity"
+                style="@style/MyStyle"
+                android:hint="@string/writeMessage"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:layout_marginLeft="@dimen/margin_elements"/>
+            <View
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_elements"
+                />
+
+        </LinearLayout>
+<!--</ScrollView>-->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_elements">
+            <Button
+                android:id="@+id/start"
+                android:textSize="@dimen/subtitle"
+                android:layout_height="wrap_content"
+                android:layout_width="@dimen/image_height"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:text="@string/buttonStart"
+                android:onClick="startToExchange"
+                android:padding="@dimen/subtitle"/>
+            <Button
+                android:textSize="@dimen/subtitle"
+                android:id="@+id/reset"
+                android:layout_width="@dimen/image_height"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_elements"
+                android:text="@string/buttonReset"
+                android:onClick="startToResetExchange"
+                android:padding="@dimen/subtitle"
+                />
+
+        </LinearLayout>
+
+
+
+</LinearLayout>
+
+</ScrollView>

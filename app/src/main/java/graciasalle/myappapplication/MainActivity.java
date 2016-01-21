@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -35,13 +36,17 @@ public class MainActivity extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch(item.getItemId()){
+            //int id = item.getItemId();
+            case R.id.action_settings:
+                Toast.makeText(this, "This activity first", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.action_helping:
+                Toast.makeText(this, "Action helping Activity", Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

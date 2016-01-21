@@ -1,0 +1,185 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="graciasalle.myappapplication.FragmentDetail"
+    android:id="@+id/detailView" >
+
+    <!-- Country origin detail money, flag, name -->
+    <TextView android:text="@string/textExchange"
+        style="@style/MyStyle"
+        android:textSize="@dimen/title"
+        android:id="@+id/textViewOrigin"
+        android:textStyle="bold"/>
+
+        <TextView android:text="@string/moneyOrigin"
+            style="@style/MyStyle"
+            android:textSize="@dimen/subtitle"
+            android:textColor="@color/textColorPrimary"
+            android:id="@+id/moneyOrigin"
+            android:layout_toRightOf="@+id/textViewOrigin"
+            android:layout_alignTop="@+id/textViewOrigin"
+            android:layout_marginLeft="@dimen/spaceLeft"
+            />
+
+        <!-- destination money flag, money and name country-->
+        <TextView style="@style/MyStyle"
+            android:text="@string/textDestination"
+            android:layout_marginTop="@dimen/margin_elements"
+            android:layout_below="@+id/moneyOrigin"
+            android:textSize="@dimen/title"
+            android:id="@+id/detailDestination"
+            android:textStyle="bold"/>
+
+     <TextView
+         android:text="@string/moneyDestination"
+         style="@style/MyStyle"
+         android:textSize="@dimen/subtitle"
+         android:textColor="@color/textColorPrimary"
+         android:id="@+id/detailMoneyDestination"
+         android:layout_alignTop="@+id/detailDestination"
+         android:layout_toRightOf="@+id/detailDestination"
+         android:layout_marginLeft="@dimen/spaceLeft"
+        />
+
+        <!-- the rate country of origin and destination money-->
+    <TextView
+        style="@style/MyStyle"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:textSize="@dimen/title"
+        android:id="@+id/exchangeRateMoney"
+        android:text="@string/rateExchange"
+        android:layout_below="@+id/detailMoneyDestination"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/originRate"
+        style="@style/MyStyle"
+        android:textSize="@dimen/subtitle"
+        android:layout_marginLeft="@dimen/spaceLeft"
+        android:text="@string/rateExchangeOrigin"
+        android:layout_alignTop="@+id/exchangeRateMoney"
+        android:layout_toRightOf="@+id/exchangeRateMoney"/>
+
+    <!-- the rate of destination -->
+    <TextView
+        style="@style/MyStyle"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:textSize="@dimen/title"
+        android:id="@+id/exchangeRateMoney1"
+        android:text="@string/rateExchange1"
+        android:layout_below="@+id/originRate"/>
+    <TextView
+        android:id="@+id/originDestination"
+        style="@style/MyStyle"
+        android:textSize="@dimen/title"
+        android:layout_marginLeft="96dp"
+        android:text="@string/rateExchangeDestination"
+        android:layout_toRightOf="@+id/exchangeRateMoney1"
+        android:layout_alignTop="@+id/exchangeRateMoney1"/>
+
+    <!-- Result of exchange-->
+    <View
+       android:background="@color/colorPrimaryDark"
+       android:layout_width="wrap_content"
+       android:layout_height="2dp"
+       android:layout_below="@+id/originDestination"
+       android:layout_marginTop="@dimen/margin_elements"
+       />
+       <TextView
+           android:layout_below="@+id/originDestination"
+           style="@style/MyStyle"
+           android:layout_marginTop="@dimen/margin_elements"
+           android:textStyle="bold"
+           android:textSize="@dimen/title"
+           android:text="@string/textChange"/>
+
+   <TextView
+       android:id="@+id/exchange"
+       style="@style/MyStyle"
+       android:layout_marginTop="@dimen/margin_elements"
+       android:textSize="@dimen/title"
+       android:text="@string/exchange"
+       android:layout_below="@+id/originDestination"
+       android:layout_marginLeft="@dimen/margin_top"
+       android:textColor="@color/textColor"
+       />
+    <!-- History data -->
+    <TextView
+        style="@style/MyStyle"
+        android:layout_below="@+id/exchange"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:text="@string/visaExpense"
+        android:textStyle="bold"
+        android:textSize="@dimen/title"/>
+    <TextView
+        android:id="@+id/idVisaExpenses"
+        style="@style/MyStyle"
+        android:textStyle="italic"
+        android:textSize="@dimen/title"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:layout_below="@+id/exchange"
+        android:text="@string/moneyExpensesVisa"
+        android:layout_marginLeft="@dimen/margin_top"/>
+
+    <!-- the second part to history money-->
+    <TextView
+        style="@style/MyStyle"
+        android:layout_below="@+id/idVisaExpenses"
+        android:textSize="@dimen/title"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:text="@string/historyOfCountry"/>
+    <TextView
+        android:id="@+id/idHistoryMoney"
+        style="@style/MyStyle"
+        android:textStyle="italic"
+        android:textSize="@dimen/title"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:layout_below="@+id/idVisaExpenses"
+        android:text="@string/value"
+        android:layout_marginLeft="@dimen/spaceLeft"/>
+
+    <!-- Create a coin -->
+    <TextView
+        style="@style/MyStyle"
+        android:layout_below="@+id/idHistoryMoney"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:text="@string/createCoin"
+        android:textSize="@dimen/title"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/idCreateCoin"
+        style="@style/MyStyle"
+        android:layout_below="@+id/idHistoryMoney"
+        android:layout_marginTop="@dimen/margin_elements"
+        android:text="@string/createCoin"
+        android:textSize="@dimen/title"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/spaceLeft"/>
+
+    <TextView android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+        android:layout_below="@+id/idCreateCoin"
+        android:text="Image Country:"
+        android:textStyle="bold"
+        android:textSize="@dimen/title"
+        android:layout_marginTop="@dimen/margin_elements"
+        />
+    <ImageView
+        android:layout_below="@+id/idCreateCoin"
+        android:layout_width="@dimen/image_width"
+        android:layout_height="@dimen/image_height"
+        android:layout_marginLeft="@dimen/spaceLeft"
+        android:id="@+id/imageViewCoinCountry"
+        android:layout_marginTop="@dimen/margin_elements"
+       />
+
+</RelativeLayout>
+</ScrollView>

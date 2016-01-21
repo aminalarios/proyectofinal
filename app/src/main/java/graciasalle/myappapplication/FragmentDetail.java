@@ -1,59 +1,78 @@
 package graciasalle.myappapplication;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 import model.ExchangeModel;
 
 
-public class DataExchange extends ActionBarActivity {
-    TextView paisOrigen;
-    TextView monedaOrigen;
-    TextView paisDestino;
-    TextView monedaDestino;
-    TextView tauxchange1;
-    TextView tauxchange2;
-    TextView cambio;
+public class FragmentDetail extends Fragment {
+
+    TextView paisOrigen, monedaOrigen, paisDestino, monedaDestino, tauxchange1,tauxchange2,cambio, textViewCoin,
+            textViewVisa, textViewHistory;
     ExchangeModel exchange;
+    ImageView imageViewCoin;
+
+     @Override
+     public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+/*       Bundle args = getArguments();
+        //
+        if(args!=null){
+            exchangeModel  = (ExchangeModel) args.getSerializable(SegundActivity.LIST_TO_SHOW);
+           // loadDataInitialToShow(this.getActivity());
+        }*/
+     }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        View v =inflater.inflate(R.layout.fragment_detail,container, false);
+        return v;
+
+    }
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_exchange);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
         // declaramos las variables del view
-        paisOrigen=(TextView) findViewById(R.id.textViewOrigin);
-        monedaOrigen=(TextView) findViewById(R.id.moneyOrigin);
-        paisDestino=(TextView) findViewById(R.id.detailDestination);
-        monedaDestino=(TextView) findViewById(R.id.detailMoneyDestination);
-        tauxchange1=(TextView) findViewById(R.id.originRate);
-        tauxchange2=(TextView) findViewById(R.id.originDestination);
-        cambio=(TextView) findViewById(R.id.exchange);
+        paisOrigen=(TextView) this.getActivity().findViewById(R.id.textViewOrigin);
+        monedaOrigen=(TextView) this.getActivity().findViewById(R.id.moneyOrigin);
+        paisDestino=(TextView) this.getActivity().findViewById(R.id.detailDestination);
+        monedaDestino=(TextView) this.getActivity().findViewById(R.id.detailMoneyDestination);
+        tauxchange1=(TextView) this.getActivity().findViewById(R.id.originRate);
+        tauxchange2=(TextView) this.getActivity().findViewById(R.id.originDestination);
+        cambio=(TextView) this.getActivity().findViewById(R.id.exchange);
+        /*data of the visa express to exchange money*/
 
 
-        exchange=  (ExchangeModel) getIntent().getSerializableExtra("exchange");
-
-
-
+        exchange=  (ExchangeModel) getArguments().getSerializable("exchange");
         paisOrigen.setText(exchange.getNameCountryOrigin());
         monedaOrigen.setText(exchange.getMoneyCountryOrigin());
         paisDestino.setText(exchange.getNameCountryDestination());
         monedaDestino.setText(exchange.getMoneyCountryDestination());
-
-       Conversion (exchange.getNameCountryOrigin(),exchange.getNameCountryDestination(),Double.parseDouble(exchange.getQuantityMoney()));
+        Conversion (exchange.getNameCountryOrigin(),exchange.getNameCountryDestination(),Double.parseDouble(exchange.getQuantityMoney()));
         Conversion1 (exchange.getNameCountryOrigin(),exchange.getNameCountryDestination(),Double.parseDouble(exchange.getQuantityMoney()));
         Conversion2 (exchange.getNameCountryOrigin(),exchange.getNameCountryDestination(),Double.parseDouble(exchange.getQuantityMoney()));
         Conversion3 (exchange.getNameCountryOrigin(),exchange.getNameCountryDestination(),Double.parseDouble(exchange.getQuantityMoney()));
         Conversion4 (exchange.getNameCountryOrigin(),exchange.getNameCountryDestination(),Double.parseDouble(exchange.getQuantityMoney()));
         Conversion5 (exchange.getNameCountryOrigin(),exchange.getNameCountryDestination(),Double.parseDouble(exchange.getQuantityMoney()));
 
+        // Call the function einother datos on the method of oncreate
+        otherData(exchange.getNameCountryDestination());
 
-        }
-
-
+    }
 
 
     public void Conversion (String p1, String p2, double calcule){
@@ -390,6 +409,7 @@ public class DataExchange extends ActionBarActivity {
                 a=calcule;
                 b=0.001091;
                 a=a*b;
+                a=roundTwoDecimals(a);
                 calculo= String.valueOf(a);
                 cambio.setText(calculo);
 
@@ -400,6 +420,7 @@ public class DataExchange extends ActionBarActivity {
                 a=calcule;
                 b=0.000990;
                 a=a*b;
+                a=roundTwoDecimals(a);
                 calculo= String.valueOf(a);
                 cambio.setText(calculo);
 
@@ -410,6 +431,7 @@ public class DataExchange extends ActionBarActivity {
                     a=calcule;
                     b=0.06494;
                     a=a*b;
+                    a=roundTwoDecimals(a);
                     calculo= String.valueOf(a);
                     cambio.setText(calculo);
 
@@ -420,6 +442,7 @@ public class DataExchange extends ActionBarActivity {
                         a=calcule;
                         b=0.001358;
                         a=a*b;
+                        a=roundTwoDecimals(a);
                         calculo= String.valueOf(a);
                         cambio.setText(calculo);
 
@@ -430,6 +453,7 @@ public class DataExchange extends ActionBarActivity {
                             a=calcule;
                             b=0.08040;
                             a=a*b;
+                            a=roundTwoDecimals(a);
                             calculo= String.valueOf(a);
                             cambio.setText(calculo);
 
@@ -440,6 +464,7 @@ public class DataExchange extends ActionBarActivity {
                                 a=calcule;
                                 b=1;
                                 a=a*b;
+                                a=roundTwoDecimals(a);
                                 calculo= String.valueOf(a);
                                 cambio.setText(calculo);
 
@@ -452,10 +477,10 @@ public class DataExchange extends ActionBarActivity {
     }
 
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_data_exchange, menu);
+    //    getMenuInflater().inflate(R.menu.menu_data_exchange, menu);
         return true;
     }
 
@@ -473,4 +498,73 @@ public class DataExchange extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+*/
+
+/*Case to show history of country to create the coin*/
+//implemente the function of the history coin and the country
+    public void otherData(String country){
+        //int to index the values
+        int index=0, index1=1, index2=2, index3=3, index4=4, index5=5;
+        /* update to story values*/
+        String [] arrayHistory;
+        //Values to get array
+        String [] arrayExpensives;
+        String [] arrayCoins;
+        textViewVisa = (TextView) this.getActivity().findViewById(R.id.idVisaExpenses);
+        textViewHistory = (TextView)this.getActivity().findViewById(R.id.idHistoryMoney);
+        imageViewCoin = (ImageView) this.getActivity().findViewById(R.id.imageViewCoinCountry);
+        textViewCoin = (TextView) this.getActivity().findViewById(R.id.idCreateCoin);
+        arrayExpensives = getResources().getStringArray(R.array.expenses_array);
+        arrayHistory = getResources().getStringArray(R.array.history_money);
+        arrayCoins = getResources().getStringArray(R.array.coinHistorys);
+        switch (country){
+            case "States of Amercia":
+                textViewVisa.setText(""+arrayExpensives[index]);
+                textViewHistory.setText(""+arrayHistory[index]);
+                imageViewCoin.setImageResource(R.drawable.liberte);
+                textViewCoin.setText(""+arrayCoins[index]);
+                break;
+            case "Europe":
+                textViewVisa.setText(""+arrayExpensives[index1]);
+                textViewHistory.setText(""+arrayHistory[index1]);
+                textViewCoin.setText(""+arrayCoins[index1]);
+                imageViewCoin.setImageResource(R.drawable.arc_triomphe);
+                break;
+            case "CEDEAO":
+                textViewVisa.setText(""+arrayExpensives[index2]);
+                textViewHistory.setText(""+arrayHistory[index2]);
+                textViewCoin.setText(""+arrayCoins[index2]);
+                imageViewCoin.setImageResource(R.drawable.basilique);
+                break;
+
+            case "Guinea":
+                textViewVisa.setText(""+arrayExpensives[index3]);
+                textViewHistory.setText(""+arrayHistory[index3]);
+                textViewCoin.setText(""+arrayCoins[index3]);
+             imageViewCoin.setImageResource(R.drawable.dame);
+
+            break;
+
+            case "Rwanda":
+                textViewVisa.setText(""+arrayExpensives[index4]);
+                textViewHistory.setText(""+arrayHistory[index4]);
+                textViewCoin.setText(""+arrayCoins[index4]);
+                imageViewCoin.setImageResource(R.drawable.image);
+            break;
+
+            case "Congo":
+                textViewVisa.setText(""+arrayExpensives[index5]);
+                textViewHistory.setText(""+arrayHistory[index5]);
+                textViewCoin.setText(""+arrayCoins[index5]);
+                imageViewCoin.setImageResource(R.drawable.statue_congo);
+             break;
+            default:
+
+            break;
+        }
+    }
+    double roundTwoDecimals(double d){
+        DecimalFormat twoDForm = new DecimalFormat("#.#");
+        return Double.valueOf(twoDForm.format(d));
+    }
+   }

@@ -6,6 +6,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_segund">SegundActivity</string>
     <string name="action_name">Currency</string>
+    <string name="action_helping">Help</string>
+    <string name="action_color">Background Color</string>
+    <string name="action_color1">Background Color</string>
     <string name="textOrigin">Country of Origin!</string>
     <string name="moneyOrigin">Money of Origin!</string>
     <string name="moneyDestination">Money of Destination!</string>
@@ -39,16 +42,49 @@
     </string-array>
 
     <string name="writeMessage">Write a quantity money</string>
-    <string name="buttonStart">START TO EXCHANGE</string>
-    <string name="buttonReset">RESET TO EXCHANGE</string>
+    <string name="buttonStart">START APP</string>
+    <string name="buttonReset">RESET APP</string>
     <string name="checkboxText">Exchange reserves</string>
     <string name="title_activity_data_exchange">DataExchange</string>
     <string name="textExchange">Country Origin!</string>
-    <string name="rateExchange">Rates Exchange Origin Destination</string>
-    <string name="rateExchange1">Rates Exchange Destination Origin</string>
-    <string name="rateExchangeOrigin">Rate Origin Exchange</string>
-    <string name="rateExchangeDestination">Rate Destination Exchange</string>
+    <string name="rateExchange">Rates Origin:</string>
+    <string name="rateExchange1">Rates Destination:</string>
+    <string name="rateExchangeOrigin">Rate Origin Exchange:</string>
+    <string name="rateExchangeDestination">Rate Destination Exchange:</string>
     <string name="exchange">Exchange: </string>
+    <string name="textChange">RESULT:</string>
 
+    <!--the strings history, visa, and image money-->
+    <string name="visaExpense">Visa Expenses:</string>
+    <string name="moneyExpensesVisa">Visa money exchange:</string>
+    <string name="historyOfCountry">History:</string>
+    <string name="value">Values:</string>
+    <string name="createCoin">Coin:</string>
 
+    <!-- use the list and the fragment app-->
+    <string-array name="expenses_array">
+        <item>50€</item>
+        <item>60€</item>
+        <item>50€ a 100€</item>
+        <item>60€</item>
+        <item>45€</item>
+        <item>49€</item>
+    </string-array>
+    <string-array name="history_money">
+        <item>North America consists of 50 states and a federal district. It also has a state and a number of dependent territories in the Caribbean and Oceania. Its form of government is a presidential federal republic.</item>
+        <item>The EU is a geopolitical entity that covers a large part of Europe. It is based on numerous treaties and has undergone expansions that have been originally 6 member states to 28 in 2013, most states in Europe.</item>
+        <item>It is a regional group of fifteen West African countries. Founded on May 28, 1975 with the signing of the Treaty of Lagos, its mission is to promote economic integration in the region.
+             Currency = CFA franc is the common currency of 14 African countries, most of them former French colonies</item>
+        <item>Guinea is a country in Western Africa, bordered by Senegal, Mali, Sierra Leone, Liberia, Guinea and Ivory Coast Bisao, people 10.Millones has 24 ethnic groups and is rich in diamonds and gold reached its bauxite .... 1959 independence.</item>
+        <item>Rwanda is a landlocked country in central Africa landlocked, bordering DRC, Burundi, Tanzania and Uganda. It achieved independence in 1961 and is a country known for genocide between Tutsis and Utus.</item>
+        <item>The DRC belonging to the former Zaire became independent in 1960 but unfortunately due to the different conflicts for its mineral wealth, is formed by 45 million.</item>
+    </string-array>
+    <string-array name="coinHistorys">
+        <item>"The dollar is the currency of the United States, which emerged in 1971 its value is backed only by the trust of all users</item>
+        <item>The euro (€) is the currency used by the institutions of the European Union (EU) as well as the official currency of the eurozone, for</item>
+        <item>Currency = CFA franc is the common currency of 14 African countries, most of them former French colonies</item>
+        <item>Guinean franc currency emerging in the 80s to replace the silly</item>
+        <item>The Rwandan franc is the official currency since 1960</item>
+        <item>The Congolese franc currency emerged in 1887 but is replaced by several currencies in 1997 resurfaces.</item>
+    </string-array>
 </resources>

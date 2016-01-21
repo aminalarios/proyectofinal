@@ -5,7 +5,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:layout_width="fill_parent"
-    android:background="@color/backgroundColor"
     android:layout_height="fill_parent"  tools:context=".MainActivity">
 
     <TextView android:text="@string/textApp"
@@ -14,7 +13,7 @@
         android:textColor="@color/textColorPrimary"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/margin_top"
-        android:textSize="@dimen/titlePrincipal"
+        android:textSize="@dimen/headline"
         android:textStyle="bold"
         />
 
@@ -26,7 +25,6 @@
         android:layout_centerHorizontal="true"/>
 
     <Button
-        style="@style/styleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

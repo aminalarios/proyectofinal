@@ -6,7 +6,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        >
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -22,13 +23,15 @@
             android:name=".SegundActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_segund"
+            android:launchMode="singleTask"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="graciasalle.myappapplication.MainActivity" />
         </activity>
         <activity
-            android:name=".DataExchange"
+            android:launchMode="singleTask"
+            android:name=".FragmentDetail"
             android:label="@string/title_activity_data_exchange"
             android:parentActivityName=".SegundActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">
